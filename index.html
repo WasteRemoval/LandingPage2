@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4ffea 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .hero {
+            margin: 50px 0;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #1f2937;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .countdown-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            min-width: 100px;
+        }
+
+        .countdown-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #2e7d32;
+        }
+
+        .countdown-label {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .cta-button {
+            background: #2e7d32;
+            color: white;
+            padding: 20px 40px;
+            border-radius: 30px;
+            font-size: 1.2em;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin: 30px 0;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: #1b5e20;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .limited-spots {
+            background: #f1f8e9;
+            color: #2e7d32;
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+
+        .early-bird {
+            background: #fffbeb;
+            color: #d97706;
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">ScooptyDoo</div>
+        <div class="tagline">We do the dirty work, so you don't have to!</div>
+
+        <div class="hero">
+            <h1>Professional Dog Waste<br>Removal Service</h1>
+            <p>Launching in your area soon! Join the waitlist for exclusive early access pricing.</p>
+            
+            <div class="limited-spots">🌟 Only 50 spots available for launch</div>
+            <div class="early-bird">🎉 Early bird discount: Save 30% off regular pricing</div>
+
+            <div class="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">30</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">23</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">59</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">59</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeQo6sUn8jgL8uBsGuebVOFHeb2liabI52q-BOolQ91bNOyww/viewform?usp=sf_link" class="cta-button">
+                🐶 Join The Waitlist
+            </a>
+            <p style="color: #666; font-size: 0.9em;">* Limited time offer. First come, first served.</p>
+        </div>
+
+        <div class="benefits">
+            <div class="benefit-card">
+                <h3>Weekly Service</h3>
+                <p>Professional waste removal from your yard, scheduled at your convenience.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Enjoy Your Yard</h3>
+                <p>Keep your lawn clean and safe for family activities - we handle the dirty work!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set the date we're counting down to (30 days from now)
+        const countDownDate = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).getTime();
+
+        const countdown = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerHTML = Math.floor((distance % (1000 * 60)) / (1000 * 60));
+            document.getElementById("seconds").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.getElementById("countdown").innerHTML = "LAUNCH TIME!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
